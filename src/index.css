@@ -1,0 +1,60 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+	themes: light --default, dark --prefersdark;
+	--depth: 0;
+	--noise: 0;
+}
+
+@plugin "daisyui/theme" {
+	name: "mytheme";
+	prefersdark: false; /* set as default dark mode (prefers-color-scheme:dark) */
+	color-scheme: light; /* color of browser-provided UI */
+
+	--color-primary: #1e88e5;
+}
+
+@utility gradient-text {
+	background: linear-gradient(
+		48deg,
+		var(--color-primary),
+		var(--color-secondary),
+		var(--color-accent)
+	);
+	background-clip: text;
+	color: transparent;
+}
+
+@utility heading {
+	@apply text-2xl font-medium;
+}
+
+@utility heading-large {
+	@apply text-3xl font-bold gradient-text;
+}
+
+.banner-bg {
+	background: linear-gradient(
+			48deg,
+			rgba(0, 0, 0, 0.882),
+			rgba(0, 0, 0, 0.925)
+		),
+		url("./banner.jpg");
+}
+
+@keyframes asdf {
+	from {
+		display: block;
+	}
+	to {
+		display: none;
+	}
+}
+
+.widthAnim {
+	display: none;
+	animation: asdf 300ms ease-in;
+}
+
+@utility wq-60 {
+	@apply w-60;
+}
